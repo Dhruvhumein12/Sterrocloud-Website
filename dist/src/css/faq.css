@@ -1,0 +1,142 @@
+/* =========================================
+FAQ COMPONENT
+========================================= */
+
+.faq-item {
+
+    transition:
+        border-color .3s ease,
+        background .3s ease;
+
+}
+
+/*
+=========================================
+CONTENT
+=========================================
+*/
+
+.faq-content {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows .45s cubic-bezier(.16, 1, .3, 1),
+        opacity .25s ease;
+
+}
+
+.faq-content-inner {
+
+    overflow: hidden;
+
+}
+
+/*
+=========================================
+ACTIVE
+=========================================
+*/
+
+.faq-item.active {
+
+    border-color:
+        rgba(6, 182, 212, 0.18);
+
+    background:
+        rgba(6, 182, 212, 0.03);
+
+}
+
+.faq-item.active .faq-content {
+
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+
+}
+
+/*
+=========================================
+ICON
+=========================================
+*/
+
+.faq-icon {
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+
+}
+
+.faq-item.active .faq-icon {
+
+    background:
+        rgba(6, 182, 212, 0.08);
+
+    border-color:
+        rgba(6, 182, 212, 0.18);
+
+    transform: rotate(180deg);
+
+}
+
+/*
+=========================================
+PLUS / MINUS
+=========================================
+*/
+
+.faq-plus,
+.faq-minus {
+
+    position: absolute;
+
+    transition:
+        opacity .2s ease,
+        transform .3s ease;
+
+}
+
+.faq-minus {
+
+    opacity: 0;
+
+    transform: rotate(-90deg);
+
+}
+
+.faq-item.active .faq-plus {
+
+    opacity: 0;
+
+    transform: rotate(90deg);
+
+}
+
+.faq-item.active .faq-minus {
+
+    opacity: 1;
+
+    transform: rotate(0deg);
+
+}
+
+/*
+=========================================
+HOVER
+=========================================
+*/
+
+.faq-item:hover {
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+
+}

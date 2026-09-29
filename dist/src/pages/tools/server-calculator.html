@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- META -->
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+
+    <title>
+        Sterrocloud | Server Calculator
+    </title>
+
+    <meta name="description"
+        content="Estimate ideal Minecraft server infrastructure, RAM allocation, processor requirements, and recommended hosting plans with the Sterrocloud infrastructure calculator." />
+
+    <!-- FAVICON -->
+
+    <link rel="icon" type="image/png" href="/public/assets/icons/logo.png">
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap"
+        rel="stylesheet">
+
+    <!-- TAILWIND -->
+
+    <link href="/src/css/output.css" rel="stylesheet" />
+
+</head>
+
+<body class="overflow-x-hidden bg-[#040816] text-white">
+
+    <!-- BACKGROUND -->
+
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+
+        <div class="absolute left-[-140px] top-[-140px] h-[520px] w-[520px] rounded-full bg-[#8B5CF6]/15 blur-[170px]">
+        </div>
+
+        <div
+            class="absolute bottom-[-180px] right-[-180px] h-[520px] w-[520px] rounded-full bg-[#2563EB]/12 blur-[170px]">
+        </div>
+
+    </div>
+
+    <!-- NAVBAR -->
+
+    <div id="navbar"></div>
+
+    <!-- MAIN -->
+
+    <section class="relative px-4 pt-32 pb-20 sm:px-6 xl:px-10">
+
+        <div class="mx-auto w-full max-w-[1380px]">
+
+            <!-- HERO -->
+
+            <div class="max-w-[850px]">
+
+                <!-- Badge -->
+
+                <div
+                    class="inline-flex items-center gap-2 rounded-full border border-[#8B5CF6]/18 bg-[#8B5CF6]/8 px-5 py-2">
+
+                    <span class="size-2 rounded-full bg-[#A855F7]"></span>
+
+                    <span class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.32em] text-[#C084FC]">
+
+                        INFRASTRUCTURE RECOMMENDATION ENGINE
+
+                    </span>
+
+                </div>
+
+                <!-- Heading -->
+
+                <h1
+                    class="mt-8 max-w-[900px] font-['Clash_Display'] text-[42px] leading-[0.94] tracking-wider text-white sm:text-[64px] xl:text-[82px]">
+
+                    Configure
+                    <span
+                        class="bg-linear-to-r from-[#DDD6FE] via-[#A855F7] to-[#60A5FA] bg-clip-text text-transparent">
+
+                        Minecraft Infrastructure
+
+                    </span>
+
+                </h1>
+
+                <!-- Description -->
+
+                <p class="mt-7 max-w-[760px] font-['Satoshi'] text-[16px] leading-[1.9] text-white/42 sm:text-[17px]">
+
+                    Estimate ideal RAM allocation, processor tiers, storage requirements, and infrastructure
+                    recommendations based on your Minecraft workload and player concurrency.
+
+                </p>
+
+            </div>
+
+            <!-- GRID -->
+
+            <div class="mt-16 grid gap-7 xl:grid-cols-[0.74fr_1.26fr]">
+
+                <!-- LEFT -->
+
+                <div
+                    class="rounded-[32px] border border-white/6 bg-linear-to-br from-[#0F172A]/96 to-[#0B1120]/92 p-6 shadow-[0_0_90px_rgba(139,92,246,0.08)] backdrop-blur-xl sm:p-7">
+
+                    <!-- REGION -->
+
+                    <div>
+
+                        <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.28em] text-[#A855F7]">
+
+                            STEP 1 · REGION
+
+                        </div>
+
+                        <select id="regionSelect"
+                            class="mt-5 h-14 w-full rounded-2xl border border-white/6 bg-white/[0.03] px-5 font-['Satoshi'] text-[15px] text-white outline-none transition-all duration-300 focus:border-[#8B5CF6]/30">
+
+                            <option value="india">
+                                India
+                            </option>
+
+                            <option value="singapore">
+                                Singapore
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- PLAYERS -->
+
+                    <div class="mt-10">
+
+                        <div class="flex items-center justify-between">
+
+                            <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.28em] text-white/36">
+
+                                STEP 2 · PLAYER SLOTS
+
+                            </div>
+
+                            <span id="playersText" class="font-['JetBrains_Mono'] text-[13px] text-[#C084FC]">
+
+                                20
+
+                            </span>
+
+                        </div>
+
+                        <input type="range" min="5" max="300" value="20" id="playerSlider"
+                            class="mt-6 h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#8B5CF6]">
+
+                        <div
+                            class="mt-4 flex items-center justify-between font-['JetBrains_Mono'] text-[11px] text-white/22">
+
+                            <span>5</span>
+
+                            <span>25</span>
+
+                            <span>50</span>
+
+                            <span>100</span>
+
+                            <span>300</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SERVER TYPE -->
+
+                    <div class="mt-10">
+
+                        <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.28em] text-white/36">
+
+                            STEP 3 · SERVER TYPE
+
+                        </div>
+
+                        <div class="mt-5 grid gap-3">
+
+                            <!-- Vanilla -->
+
+                            <button data-multiplier="1"
+                                class="server-mode active-mode rounded-2xl border border-[#8B5CF6]/25 bg-linear-to-r from-[#8B5CF6] to-[#EC4899] px-5 py-5 text-left transition-all duration-300">
+
+                                <div class="flex items-start justify-between">
+
+                                    <div>
+
+                                        <h3 class="font-['Satoshi'] text-[15px] font-semibold text-white">
+
+                                            Vanilla
+
+                                        </h3>
+
+                                        <p class="mt-1 font-['Satoshi'] text-[13px] text-white/68">
+
+                                            Lightweight default gameplay
+
+                                        </p>
+
+                                    </div>
+
+                                    <span
+                                        class="rounded-full bg-white/14 px-2 py-1 font-['JetBrains_Mono'] text-[10px] text-white">
+
+                                        ×1
+
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <!-- Plugins -->
+
+                            <button data-multiplier="1.4"
+                                class="server-mode rounded-2xl border border-white/6 bg-white/[0.02] px-5 py-5 text-left transition-all duration-300 hover:border-white/12">
+
+                                <div class="flex items-start justify-between">
+
+                                    <div>
+
+                                        <h3 class="font-['Satoshi'] text-[15px] font-semibold text-white/78">
+
+                                            Plugin Heavy
+
+                                        </h3>
+
+                                        <p class="mt-1 font-['Satoshi'] text-[13px] text-white/34">
+
+                                            Paper / Spigot / Economy / Claims
+
+                                        </p>
+
+                                    </div>
+
+                                    <span
+                                        class="rounded-full border border-white/8 bg-white/[0.02] px-2 py-1 font-['JetBrains_Mono'] text-[10px] text-white/42">
+
+                                        ×1.4
+
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <!-- Modded -->
+
+                            <button data-multiplier="2"
+                                class="server-mode rounded-2xl border border-white/6 bg-white/[0.02] px-5 py-5 text-left transition-all duration-300 hover:border-white/12">
+
+                                <div class="flex items-start justify-between">
+
+                                    <div>
+
+                                        <h3 class="font-['Satoshi'] text-[15px] font-semibold text-white/78">
+
+                                            Heavy Modded
+
+                                        </h3>
+
+                                        <p class="mt-1 font-['Satoshi'] text-[13px] text-white/34">
+
+                                            Forge / Fabric modpacks / automation
+
+                                        </p>
+
+                                    </div>
+
+                                    <span
+                                        class="rounded-full border border-white/8 bg-white/[0.02] px-2 py-1 font-['JetBrains_Mono'] text-[10px] text-white/42">
+
+                                        ×2
+
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PROXY -->
+
+                    <div class="mt-10">
+
+                        <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.28em] text-white/36">
+
+                            STEP 4 · NETWORK MODE
+
+                        </div>
+
+                        <button id="proxyToggle"
+                            class="mt-5 flex w-full items-start justify-between rounded-2xl border border-white/6 bg-white/[0.02] px-5 py-5 transition-all duration-300">
+
+                            <div class="text-left">
+
+                                <h3 class="font-['Satoshi'] text-[15px] font-semibold text-white/78">
+
+                                    Proxy Infrastructure
+
+                                </h3>
+
+                                <p class="mt-2 max-w-[360px] font-['Satoshi'] text-[13px] leading-[1.7] text-white/34">
+
+                                    Enable BungeeCord or Velocity proxy infrastructure for networks and lobby systems.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="mt-1 flex h-6 w-11 items-center rounded-full bg-white/10 p-1 transition-all duration-300">
+
+                                <div id="proxyKnob" class="size-4 rounded-full bg-white transition-all duration-300">
+                                </div>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+
+                <div
+                    class="overflow-hidden rounded-[32px] border border-white/6 bg-linear-to-br from-[#0F172A]/96 to-[#0B1120]/92 shadow-[0_0_90px_rgba(139,92,246,0.08)] backdrop-blur-xl">
+
+                    <!-- TOP -->
+
+                    <div class="border-b border-white/6 px-7 py-7 sm:px-8">
+
+                        <div class="flex flex-wrap items-center justify-between gap-5">
+
+                            <div>
+
+                                <div
+                                    class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.24em] text-white/32">
+
+                                    RECOMMENDED PLAN
+
+                                </div>
+
+                                <h2 id="planName"
+                                    class="mt-3 font-['Clash_Display'] text-[40px] tracking-wide text-white">
+
+                                    Gold
+
+                                </h2>
+
+                            </div>
+
+                            <div id="stockStatus"
+                                class="inline-flex items-center gap-2 rounded-full border border-[#22C55E]/18 bg-[#22C55E]/10 px-4 py-2">
+
+                                <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                                <span class="font-['Satoshi'] text-[13px] font-medium text-[#4ADE80]">
+
+                                    In Stock
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CONTENT -->
+
+                    <div class="px-7 py-8 sm:px-8">
+
+                        <!-- RAM -->
+
+                        <div class="flex flex-wrap items-end gap-4">
+
+                            <div class="flex items-end gap-3">
+
+                                <span id="ramAmount" class="font-['Clash_Display'] text-[84px] leading-none text-white">
+
+                                    8
+
+                                </span>
+
+                                <div class="pb-3">
+
+                                    <div class="font-['Clash_Display'] text-[34px] text-[#C084FC]">
+
+                                        GB
+
+                                    </div>
+
+                                    <div id="ramType"
+                                        class="mt-1 font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.24em] text-white/28">
+
+                                        DDR4 MEMORY
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BAR -->
+
+                        <div class="mt-7 h-2 overflow-hidden rounded-full bg-white/8">
+
+                            <div id="progressBar"
+                                class="h-full w-[40%] rounded-full bg-linear-to-r from-[#8B5CF6] to-[#EC4899] transition-all duration-500">
+                            </div>
+
+                        </div>
+
+                        <!-- GRID -->
+
+                        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+
+                            <!-- CPU -->
+
+                            <div class="rounded-2xl border border-white/6 bg-white/[0.02] p-5">
+
+                                <div
+                                    class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.22em] text-white/28">
+
+                                    PROCESSOR
+
+                                </div>
+
+                                <h3 id="cpuName" class="mt-3 font-['Clash_Display'] text-[24px] text-white">
+
+                                    AMD EPYC Milan
+
+                                </h3>
+
+                                <p id="cpuAllocation" class="mt-2 font-['Satoshi'] text-[13px] text-white/34">
+
+                                    300% CPU Allocation
+
+                                </p>
+
+                            </div>
+
+                            <!-- STORAGE -->
+
+                            <div class="rounded-2xl border border-white/6 bg-white/[0.02] p-5">
+
+                                <div
+                                    class="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.22em] text-white/28">
+
+                                    STORAGE
+
+                                </div>
+
+                                <h3 id="storageName" class="mt-3 font-['Clash_Display'] text-[24px] text-white">
+
+                                    48GB NVMe
+
+                                </h3>
+
+                                <p id="backupInfo" class="mt-2 font-['Satoshi'] text-[13px] text-white/34">
+
+                                    4 Backups Included
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ANALYSIS -->
+
+                        <div class="mt-6 rounded-2xl border border-[#8B5CF6]/18 bg-[#8B5CF6]/6 p-5">
+
+                            <h4 class="font-['Satoshi'] text-[15px] font-semibold text-white">
+
+                                Infrastructure Analysis
+
+                            </h4>
+
+                            <p id="analysisText" class="mt-3 font-['Satoshi'] text-[14px] leading-[1.9] text-white/42">
+
+                                Recommended for active Minecraft communities with moderate-to-heavy gameplay workloads.
+
+                            </p>
+
+                        </div>
+
+                        <!-- PRICE -->
+
+                        <div
+                            class="mt-6 rounded-2xl border border-white/6 bg-linear-to-r from-[#8B5CF6]/10 to-[#EC4899]/8 p-6">
+
+                            <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.22em] text-white/28">
+
+                                MONTHLY PRICING
+
+                            </div>
+
+                            <div class="mt-4 flex items-end gap-2">
+
+                                <span id="currencySymbol"
+                                    class="font-['Clash_Display'] text-[58px] leading-none text-white">
+
+                                    $
+                                </span>
+
+                                <span id="priceText" class="font-['Clash_Display'] text-[64px] leading-none text-white">
+
+                                    5.81
+
+                                </span>
+
+                                <span class="pb-2 font-['Satoshi'] text-[18px] text-white/42">
+
+                                    /mo
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- FEATURES -->
+
+                        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+
+                            <div class="flex items-center gap-3">
+
+                                <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                                <span class="font-['Satoshi'] text-[14px] text-white/62">
+
+                                    NVMe SSD storage
+
+                                </span>
+
+                            </div>
+
+                            <div class="flex items-center gap-3">
+
+                                <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                                <span class="font-['Satoshi'] text-[14px] text-white/62">
+
+                                    Enterprise DDoS protection
+
+                                </span>
+
+                            </div>
+
+                            <div class="flex items-center gap-3">
+
+                                <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                                <span class="font-['Satoshi'] text-[14px] text-white/62">
+
+                                    Instant deployment
+
+                                </span>
+
+                            </div>
+
+                            <div class="flex items-center gap-3">
+
+                                <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                                <span class="font-['Satoshi'] text-[14px] text-white/62">
+
+                                    Pterodactyl panel
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BUTTON -->
+
+                        <a href="https://billing.Sterrocloud.com" target="_blank"
+                            class="mt-8 flex h-16 w-full items-center justify-center rounded-2xl bg-linear-to-r from-[#8B5CF6] to-[#EC4899] font-['Satoshi'] text-[16px] font-semibold text-white shadow-[0_0_40px_rgba(139,92,246,0.35)] transition-all duration-300 hover:scale-[1.01]">
+
+                            Deploy Recommended Plan
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- BETA NOTICE -->
+
+    <section class="px-4 pb-24 sm:px-6 xl:px-10">
+
+        <div
+            class="mx-auto flex w-full max-w-[1380px] items-start gap-4 rounded-[28px] border border-[#F59E0B]/14 bg-linear-to-r from-[#F59E0B]/8 to-[#8B5CF6]/6 p-6 backdrop-blur-xl sm:items-center sm:p-7">
+
+            <!-- ICON -->
+
+            <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-[#F59E0B]/18 bg-[#F59E0B]/10">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-[#FBBF24]" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="1.8">
+
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v4m0 4h.01M10.29 3.86l-8.08 14A2 2 0 003.92 21h16.16a2 2 0 001.71-3.14l-8.08-14a2 2 0 00-3.42 0z" />
+
+                </svg>
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div class="flex-1">
+
+                <div class="font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.28em] text-[#FBBF24]">
+
+                    BETA VERSION
+
+                </div>
+
+                <h3 class="mt-2 font-['Clash_Display'] text-[24px] tracking-wide text-white">
+
+                    Infrastructure Calculator is currently in beta
+
+                </h3>
+
+                <p class="mt-3 max-w-[900px] font-['Satoshi'] text-[15px] leading-[1.9] text-white/48">
+
+                    Recommendations are dynamically generated using current infrastructure inventory,
+                    active deployment regions, and live pricing data. Final infrastructure allocation
+                    may vary slightly depending on workload optimization and node availability.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="/src/js/navbar.js"></script>
+    <script src="/src/js/components.js"></script>
+    <script src="/src/js/currency.js?v=4"></script>
+    <script src="/src/js/navbar.js"></script>
+    <script src="/src/js/pricing.js?v=4"></script>
+
+    <!-- CALCULATOR ENGINE -->
+
+    <script>
+
+        const regionSelect =
+            document.getElementById(
+                "regionSelect"
+            );
+
+        const playerSlider =
+            document.getElementById(
+                "playerSlider"
+            );
+
+        const playersText =
+            document.getElementById(
+                "playersText"
+            );
+
+        const serverModes =
+            document.querySelectorAll(
+                ".server-mode"
+            );
+
+        const proxyToggle =
+            document.getElementById(
+                "proxyToggle"
+            );
+
+        const proxyKnob =
+            document.getElementById(
+                "proxyKnob"
+            );
+
+        /*
+        RESULTS
+        */
+
+        const planName =
+            document.getElementById(
+                "planName"
+            );
+
+        const ramAmount =
+            document.getElementById(
+                "ramAmount"
+            );
+
+        const ramType =
+            document.getElementById(
+                "ramType"
+            );
+
+        const cpuName =
+            document.getElementById(
+                "cpuName"
+            );
+
+        const cpuAllocation =
+            document.getElementById(
+                "cpuAllocation"
+            );
+
+        const storageName =
+            document.getElementById(
+                "storageName"
+            );
+
+        const backupInfo =
+            document.getElementById(
+                "backupInfo"
+            );
+
+        const analysisText =
+            document.getElementById(
+                "analysisText"
+            );
+
+        const priceText =
+            document.getElementById(
+                "priceText"
+            );
+
+        const currencySymbol =
+            document.getElementById(
+                "currencySymbol"
+            );
+
+        const stockStatus =
+            document.getElementById(
+                "stockStatus"
+            );
+
+        const progressBar =
+            document.getElementById(
+                "progressBar"
+            );
+
+        /*
+        STATE
+        */
+
+        let multiplier = 1;
+
+        let proxyEnabled = false;
+
+        /*
+        SERVER MODES
+        */
+
+        serverModes.forEach(
+            (mode) => {
+
+                mode.addEventListener(
+                    "click",
+                    () => {
+
+                        serverModes.forEach(
+                            (btn) => {
+
+                                btn.classList.remove(
+                                    "border-[#8B5CF6]/25",
+                                    "bg-linear-to-r",
+                                    "from-[#8B5CF6]",
+                                    "to-[#EC4899]"
+                                );
+
+                                btn.classList.add(
+                                    "border-white/6",
+                                    "bg-white/[0.02]"
+                                );
+
+                            }
+                        );
+
+                        mode.classList.remove(
+                            "border-white/6",
+                            "bg-white/[0.02]"
+                        );
+
+                        mode.classList.add(
+                            "border-[#8B5CF6]/25",
+                            "bg-linear-to-r",
+                            "from-[#8B5CF6]",
+                            "to-[#EC4899]"
+                        );
+
+                        multiplier =
+                            parseFloat(
+                                mode.dataset.multiplier
+                            );
+
+                        calculate();
+
+                    }
+                );
+
+            }
+        );
+
+        /*
+        PROXY
+        */
+
+        proxyToggle.addEventListener(
+            "click",
+            () => {
+
+                proxyEnabled =
+                    !proxyEnabled;
+
+                if (
+                    proxyEnabled
+                ) {
+
+                    proxyToggle.classList.add(
+                        "border-[#8B5CF6]/20",
+                        "bg-[#8B5CF6]/6"
+                    );
+
+                    proxyKnob.classList.add(
+                        "translate-x-5",
+                        "bg-[#A855F7]"
+                    );
+
+                }
+
+                else {
+
+                    proxyToggle.classList.remove(
+                        "border-[#8B5CF6]/20",
+                        "bg-[#8B5CF6]/6"
+                    );
+
+                    proxyKnob.classList.remove(
+                        "translate-x-5",
+                        "bg-[#A855F7]"
+                    );
+
+                }
+
+                calculate();
+
+            }
+        );
+
+        /*
+        CALCULATOR
+        */
+
+        function calculate() {
+
+            const region =
+                regionSelect.value;
+
+            const players =
+                parseInt(
+                    playerSlider.value
+                );
+
+            playersText.textContent =
+                players;
+
+            /*
+            RAM LOGIC
+            */
+
+            let estimatedRam =
+                Math.ceil(
+                    (players / 8)
+                    * multiplier
+                );
+
+            if (
+                proxyEnabled
+            ) {
+
+                estimatedRam += 3;
+
+            }
+
+            if (
+                estimatedRam < 2
+            ) {
+
+                estimatedRam = 2;
+
+            }
+
+            /*
+            FIND BEST PLAN
+            */
+
+            let selectedNode = null;
+
+            let selectedPlan = null;
+
+            const regionData =
+                pricingData[region];
+
+            Object.entries(
+                regionData
+            ).forEach(
+                ([key, node]) => {
+
+                    if (
+                        !node.available
+                    ) return;
+
+                    node.plans.forEach(
+                        (plan) => {
+
+                            if (
+                                !selectedPlan &&
+                                plan.ram >= estimatedRam
+                            ) {
+
+                                selectedNode = node;
+
+                                selectedPlan = plan;
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+            /*
+            FALLBACK
+            */
+
+            if (
+                !selectedPlan
+            ) {
+
+                selectedNode =
+                    regionData.epyc;
+
+                selectedPlan =
+                    regionData.epyc.plans[
+                    regionData.epyc.plans.length - 1
+                    ];
+
+            }
+
+            /*
+            CURRENCY
+            */
+
+            const selectedCurrency =
+                localStorage.getItem(
+                    "currency"
+                ) || "usd";
+
+            let convertedPrice =
+                selectedPlan.price;
+
+            let symbol = "$";
+
+            if (
+                selectedCurrency === "inr"
+            ) {
+
+                convertedPrice =
+                    selectedPlan.price * 86;
+
+                symbol = "₹";
+
+            }
+
+            if (
+                selectedCurrency === "eur"
+            ) {
+
+                convertedPrice =
+                    selectedPlan.price * 0.92;
+
+                symbol = "€";
+
+            }
+
+            /*
+            UPDATE UI
+            */
+
+            planName.textContent =
+                selectedPlan.name;
+
+            ramAmount.textContent =
+                selectedPlan.ram;
+
+            ramType.textContent =
+                `${selectedNode.ramType} MEMORY`;
+
+            cpuName.textContent =
+                selectedNode.label;
+
+            cpuAllocation.textContent =
+                `${selectedPlan.cpu} CPU Allocation`;
+
+            storageName.textContent =
+                `${selectedPlan.storage}GB NVMe`;
+
+            backupInfo.textContent =
+                `${selectedPlan.backups} Backups Included`;
+
+            currencySymbol.textContent =
+                symbol;
+
+            priceText.textContent =
+                convertedPrice.toFixed(2);
+
+            /*
+            STOCK
+            */
+
+            if (
+                selectedPlan.stock
+            ) {
+
+                stockStatus.innerHTML =
+                    `
+                    <span class="size-2 rounded-full bg-[#22C55E]"></span>
+
+                    <span class="font-['Satoshi'] text-[13px] font-medium text-[#4ADE80]">
+
+                        In Stock
+
+                    </span>
+                    `;
+
+            }
+
+            else {
+
+                stockStatus.innerHTML =
+                    `
+                    <span class="size-2 rounded-full bg-[#EF4444]"></span>
+
+                    <span class="font-['Satoshi'] text-[13px] font-medium text-[#F87171]">
+
+                        Out of Stock
+
+                    </span>
+                    `;
+
+            }
+
+            /*
+            ANALYSIS
+            */
+
+            analysisText.textContent =
+                `Recommended for ${players}+ concurrent players with optimized infrastructure allocation, enterprise-grade protection, and stable TPS performance.`;
+
+            /*
+            BAR
+            */
+
+            progressBar.style.width =
+                `${Math.min(selectedPlan.ram * 3.2, 100)}%`;
+
+        }
+
+        /*
+        EVENTS
+        */
+
+        playerSlider.addEventListener(
+            "input",
+            calculate
+        );
+
+        regionSelect.addEventListener(
+            "change",
+            calculate
+        );
+
+        /*
+        INIT
+        */
+
+        calculate();
+
+    </script>
+
+</body>
+
+</html>

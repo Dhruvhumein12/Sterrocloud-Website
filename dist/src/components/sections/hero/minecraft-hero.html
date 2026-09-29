@@ -1,0 +1,110 @@
+<section
+    class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050816] px-6 py-32 text-white">
+
+    <!-- =========================
+         BACKGROUND VIDEO
+    ========================== -->
+
+    <video autoplay muted loop playsinline class="absolute inset-0 h-full w-full object-cover">
+
+        <source src="/public/assets/videos/minecraft-bg.mp4" type="video/mp4">
+
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,8,22,.82),rgba(5,8,22,.62),rgba(5,8,22,.88))]">
+    </div>
+
+    <!-- Purple Glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,.22),transparent_45%)]">
+    </div>
+
+    <!-- Noise -->
+    <div class="absolute inset-0 opacity-[0.03] mix-blend-soft-light" style="
+            background-image:
+            url('https://grainy-gradients.vercel.app/noise.svg');
+        ">
+    </div>
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
+    <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
+
+        <!-- Top Badge -->
+        <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-4 py-2 backdrop-blur-md">
+
+            <!-- Dot -->
+            <span class="h-2 w-2 rounded-full bg-violet-300 shadow-[0_0_14px_rgba(196,181,253,.95)]">
+            </span>
+
+            <span class="text-sm font-medium tracking-tight text-violet-100">
+
+                Premium Minecraft Infrastructure
+
+            </span>
+
+        </div>
+
+        <!-- Heading -->
+        <h1
+            class="max-w-5xl font-['Clash_Display'] text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tight text-white">
+
+            Minecraft hosting
+
+            <span class="bg-linear-to-r from-violet-200 via-fuchsia-200 to-violet-300 bg-clip-text text-transparent">
+
+                engineered
+
+            </span>
+
+            for modern communities.
+
+        </h1>
+
+        <!-- Description -->
+        <p class="mt-7 max-w-2xl font-['Satoshi'] text-lg leading-8 text-white/68 sm:text-xl">
+
+            Deploy high-performance Minecraft servers powered by Ryzen processors,
+            NVMe storage, DDR5 memory, and enterprise-grade DDoS protection —
+            optimized for smooth gameplay and instant scalability.
+
+        </p>
+
+        <!-- Buttons -->
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+
+            <!-- Primary -->
+            <a href="/src/pages/minecraft/minecraft.html#pricing"
+                class="group inline-flex items-center gap-3 rounded-2xl bg-linear-to-r from-violet-500 to-fuchsia-500 px-7 py-4 font-['Satoshi'] text-sm font-bold text-white shadow-[0_0_40px_rgba(139,92,246,.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(139,92,246,.55)]">
+
+                Deploy Server
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7" />
+
+                </svg>
+
+            </a>
+
+            <!-- Secondary -->
+            <a href="/src/pages/index.html#features"
+                class="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-7 py-4 font-['Satoshi'] text-sm font-bold text-white/85 backdrop-blur-md transition-all duration-300 hover:border-violet-400/30 hover:bg-white/[0.07]">
+
+                View Features
+
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Bottom Fade -->
+    <div class="absolute bottom-0 left-0 h-40 w-full bg-linear-to-t from-[#050816] to-transparent">
+    </div>
+
+</section>

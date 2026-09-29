@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL TYPOGRAPHY
+========================= */
+
+body {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Clash Display', sans-serif;
+}
+
+/* Paragraphs */
+p {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Buttons */
+button {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Links */
+a {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Lists */
+li {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Monospace utility */
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
